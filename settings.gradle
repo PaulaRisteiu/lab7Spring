@@ -1,0 +1,5 @@
+rootProject.name = 'lab7Spring'
+include 'lab7Spring-core'
+include 'lab7Spring-client'
+include 'lab7Spring-web'
+
