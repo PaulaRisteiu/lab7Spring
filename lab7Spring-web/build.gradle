@@ -1,19 +1,18 @@
-plugins {
-    id 'java'
-}
-
-group = 'ro.ubb.lab7Spring'
-version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
+apply plugin: 'war'
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
+    implementation project(':lab7Spring-core')
 
-test {
-    useJUnitPlatform()
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonDatabindVersion"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonDatabindVersion"
+
+//    implementation group: 'javax.servlet', name: 'javax.servlet-api', version: "$javaxServeletApiVersion"
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+//    implementation group: 'javax.servlet', name: 'javax.servlet-api', version:"$javaxServeletApiVersion"
+// https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
+    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: "$javaxServeletApiVersion"
+
+
 }
